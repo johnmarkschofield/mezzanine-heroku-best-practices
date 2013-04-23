@@ -80,7 +80,7 @@ def get_env_variable(var_name, default=None):
     try:
         return os.environ[var_name]
     except KeyError:
-        if default:
+        if default is not None:
             return default
         else:
             error_msg = msg % var_name
