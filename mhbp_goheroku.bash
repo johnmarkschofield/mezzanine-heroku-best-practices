@@ -16,5 +16,8 @@ fi
 echo "Pushing static assets to S3"
 ./mhbp_collectstatic.bash
 
+echo "Pushing code to your git repo"
+git push origin master
+
 echo "Pushing code to Heroku"
 git push heroku master
