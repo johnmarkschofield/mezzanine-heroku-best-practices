@@ -1,12 +1,5 @@
 #!/bin/bash
 
-while read line; do
-    eval export $line
-done < mhbp_settings
-
-source $VIRTUALENV_HOME/$VIRTUALENV_NAME/bin/activate
-
-
 git status | grep "nothing to commit"
 if [ $? -ne 0 ]; then
     echo "First, check in all your changes to git. Then try again."
@@ -23,7 +16,7 @@ echo
 
 echo "Pushing configuration variables to Heroku"
 while read line; do
-    heroku config:set $line
+    eval heroku config:set $line
 done < mhbp_settings
 echo
 
