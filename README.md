@@ -1,5 +1,4 @@
-mezzanine-heroku-best-practices
-===============================
+# mezzanine-heroku-best-practices
 
 This is my attempt to document (and allow you to reproduce) the best practices for deploying your Mezzanine project to Heroku.
 
@@ -7,22 +6,21 @@ This does not attempt to be all things to all people. For instance, a best pract
 
 
 
-IMPORTANT NOTE:
+## IMPORTANT NOTE:
 Do not use this repository! It is not production ready -- at this time, it's not complete and not ready for production. It's useful as a way for me to ask for help without showing proprietary code, but probably won't be useful for you yet.
 
 
-Pre-Requisites
---------------
+## Pre-Requisites
+
 * VirtualEnvWrapper
 * An account on Amazon S3
 * A PostgreSQL server running on your development machine. If you're on a Mac, I highly recommend http://postgresapp.com/
 
 
 
-Installation
-------------
+## Installation
 
-Initial Install:
+### Initial Install:
 
 1. Clone the repository to your system, giving it a name on your system:
   git clone git://github.com/johnmarkschofield/mezzanine-heroku-best-practices.git YOURPROJECT
@@ -47,7 +45,7 @@ Initial Install:
 6. Note the host name (starting with HTTPS) that "heroku create" shows you. You'll need that when you get to the "Configure MHBP" section. Use it for "HEROKU_HOST"
 
 
-Amazon S3:
+### Amazon S3:
 
 1. Create a bucket in the US-East or US-Standard regions (I did not setup logging.)
 
@@ -76,7 +74,7 @@ Amazon S3:
 
 
 
-Configure MHBP
+### Configure MHBP
 
 1. Get a randomly-generated Django SECRET_KEY, either by creating a sample Django project with "django-admin.py startproject" or by going to http://www.miniwebtool.com/django-secret-key-generator/
 
@@ -85,7 +83,7 @@ Configure MHBP
 3. In settings.py, edit the ADMINS section.
 
 
-Running Locally
+### Running Locally
 
 1. First run mhbp_collectstatic.bash
 
@@ -95,7 +93,7 @@ BLAH should be the name of your database, which should be the name of the direct
 
 
 
-Pushing To Heroku
+### Pushing To Heroku
 
 0. If it's your first time pushing to Heroku, run "heroku run python manage.py createdb"
 
@@ -112,8 +110,8 @@ You now have a Mezzanine app running on Heroku, and hosting its static files on 
 
 
 
-THANKS TO
-=========
+## THANKS TO
+
 http://mezzanine.jupo.org/
 https://www.djangoproject.com/
 http://heroku.com/
