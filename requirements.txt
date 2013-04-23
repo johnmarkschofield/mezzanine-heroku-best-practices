@@ -1,0 +1,17 @@
+Django==1.5.1
+Mezzanine==1.4.5
+Pillow==2.0.0
+bleach==1.2.1
+boto==2.9.0
+dj-database-url==0.2.1
+django-storages==1.1.8
+filebrowser-safe==0.2.26
+gevent==0.13.8
+grappelli-safe==0.2.21
+greenlet==0.4.0
+gunicorn==0.17.2
+html5lib==0.95
+pip-tools==0.3.1
+pytz==2013b
+verlib==0.1
+wsgiref==0.1.2

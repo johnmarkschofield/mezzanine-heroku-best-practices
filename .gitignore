@@ -1,4 +1,8 @@
-*.log
-*.pot
 *.pyc
-local_settings.py
+*.pyo
+*.db
+.DS_Store
+.coverage
+mhbp_settings
+/static
+.env
