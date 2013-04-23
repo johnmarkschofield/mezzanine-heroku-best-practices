@@ -32,4 +32,6 @@ done < mhbp_settings
 echo
 
 echo "Pushing code to Heroku"
+heroku maintenance:on
 git push heroku master
+heroku maintenance:off
