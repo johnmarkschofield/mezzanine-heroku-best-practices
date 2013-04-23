@@ -57,16 +57,16 @@ Do not use this repository! It is not production ready -- at this time, it's not
 
 5. Give it an appropriate policy name and past in the following policy document (replace EXAMPLE with the name of your bucket):
 
-    {
-      "Statement": [ {
-          "Effect": "Allow",
-          "Action": "s3:*",
-          "Resource": [
-            "arn:aws:s3:::EXAMPLE",
-            "arn:aws:s3:::EXAMPLE/*"
-          ]
-        }]
-    }
+      {
+        "Statement": [ {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+              "arn:aws:s3:::EXAMPLE",
+              "arn:aws:s3:::EXAMPLE/*"
+            ]
+          }]
+      }
 
 6. Create a new user and give it an appropriate name. Make sure "Generate an access key for each User" is checked.
 
