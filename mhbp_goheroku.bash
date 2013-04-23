@@ -21,5 +21,11 @@ echo "Pushing code to your git repo"
 git push origin master
 echo
 
+echo "Pushing configuration variables to Heroku"
+while read line; do
+    heroku config:set $line
+done < mhbp_settings
+echo
+
 echo "Pushing code to Heroku"
 git push heroku master

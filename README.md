@@ -68,10 +68,15 @@ Running Locally
 BLAH should be the name of your database, which should be the name of the directory we're in.
 
 Pushing To Heroku
+0) If it's your first time pushing to Heroku, run "heroku run python manage.py createdb"
 1) ./mhbp_goheroku.bash
 2) If you get an error about your key not being authorized, fix it with:
   heroku keys:add ~/.ssh/id_rsa.pub
-(This may not be the path to your SSH public key; adjust to fit.)
+(This may not be the path to your SSH public key; adjust to fit.) If you still get the error, I found this very helpful: http://stackoverflow.com/a/13518981/19207
+
+You now have a Mezzanine app running on Heroku, and hosting its static files on S3.
+
+
 
 
 THANKS TO
