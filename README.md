@@ -36,6 +36,7 @@ Initial Install:
   heroku create
 6) Note the host name (starting with HTTPS) that "heroku create" shows you. You'll need that when you get to the "Configure MHBP" section. Use it for "HEROKU_HOST"
 
+
 Amazon S3:
 1) Create a bucket in the US-East or US-Standard regions (I did not setup logging.)
 2) Go to the IAM service to create credentials for MHBP to login via.
@@ -66,7 +67,11 @@ Running Locally
 2) Create a database with psql -c "create database BLAH;"
 BLAH should be the name of your database, which should be the name of the directory we're in.
 
-
+Pushing To Heroku
+1) ./mhbp_goheroku.bash
+2) If you get an error about your key not being authorized, fix it with:
+  heroku keys:add ~/.ssh/id_rsa.pub
+(This may not be the path to your SSH public key; adjust to fit.)
 
 
 THANKS TO
