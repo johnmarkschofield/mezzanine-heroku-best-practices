@@ -23,24 +23,24 @@ Do not use this repository! It is not production ready -- at this time, it's not
 ### Initial Install:
 
 1. Clone the repository to your system, giving it a name on your system:
-  git clone git://github.com/johnmarkschofield/mezzanine-heroku-best-practices.git YOURPROJECT
+    git clone git://github.com/johnmarkschofield/mezzanine-heroku-best-practices.git YOURPROJECT
 
 2. Create a virtual environment
 
-  cd YOURPROJECT
-  mkvirtualenv YOURPROJECT -a `pwd`
+    cd YOURPROJECT
+    mkvirtualenv YOURPROJECT -a `pwd`
 
 3. Install required dependencies:
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
 
 4. If you have more than one account, configure this project to use the correct account:
 
-  git config heroku.account work
+    git config heroku.account work
 
 5. Create a Heroku application:
 
-  heroku create
+    heroku create
 
 6. Note the host name (starting with HTTPS) that "heroku create" shows you. You'll need that when you get to the "Configure MHBP" section. Use it for "HEROKU_HOST"
 
@@ -57,16 +57,16 @@ Do not use this repository! It is not production ready -- at this time, it's not
 
 5. Give it an appropriate policy name and past in the following policy document (replace EXAMPLE with the name of your bucket):
 
-  {
-    "Statement": [ {
-        "Effect": "Allow",
-        "Action": "s3:*",
-        "Resource": [
-          "arn:aws:s3:::EXAMPLE",
-          "arn:aws:s3:::EXAMPLE/*"
-        ]
-      }]
-  }
+    {
+      "Statement": [ {
+          "Effect": "Allow",
+          "Action": "s3:*",
+          "Resource": [
+            "arn:aws:s3:::EXAMPLE",
+            "arn:aws:s3:::EXAMPLE/*"
+          ]
+        }]
+    }
 
 6. Create a new user and give it an appropriate name. Make sure "Generate an access key for each User" is checked.
 
@@ -101,7 +101,7 @@ BLAH should be the name of your database, which should be the name of the direct
 
 2. If you get an error about your key not being authorized, fix it with:
 
-  heroku keys:add ~/.ssh/id_rsa.pub
+    heroku keys:add ~/.ssh/id_rsa.pub
 
 (This may not be the path to your SSH public key; adjust to fit.) If you still get the error, I found this very helpful: http://stackoverflow.com/a/13518981/19207
 
