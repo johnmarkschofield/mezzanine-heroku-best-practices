@@ -131,10 +131,16 @@ LANGUAGE_CODE = "en"
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
 # are displayed for error pages. Should always be set to ``False`` in
 # production. Best set to ``True`` in local_settings.py
-if get_env_variable('DEBUG', default=False).upper() == "TRUE":
-    DEBUG = True
-else:
+RAW_DEBUG = get_env_variable('DEBUG', default=False)
+if RAW_DEBUG is False:
     DEBUG = False
+elif RAW_DEBUG is True:
+    DEBUG = True
+elif type(RAW_DEBUG) == str:
+    if RAW_DEBUG.upper() == "FALSE":
+        DEBUG = False
+    elif RAW_DEBUG.upper() == "TRUE":
+        DEBUG = True
 
 # Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
