@@ -16,7 +16,18 @@ echo
 
 echo "Pushing configuration variables to Heroku"
 while read line; do
-    eval heroku config:set $line
+    PREFIX=${line:0:6}
+    if [ "$PREFIX" = "LOCAL_" ]; then
+        echo "Local variable. Skipping $line"
+        continue
+    fi
+    NAME=`echo $line | awk -F "=" '{print $1}'`
+    VALUE=`echo $line | awk -F "=" '{print $2}'`
+    HEROKU_VALUE="`heroku config:get $NAME`"
+    if [ "$HEROKU_VALUE" != "$VALUE" ]; then
+        echo "Setting $NAME"
+        eval heroku config:set $line
+    fi
 done < mhbp_settings
 echo
 
