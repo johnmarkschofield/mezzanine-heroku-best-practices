@@ -53,5 +53,5 @@ echo
 
 echo "Pushing code to Heroku"
 heroku maintenance:on
-git push heroku master
+time git push heroku master
 heroku maintenance:off
