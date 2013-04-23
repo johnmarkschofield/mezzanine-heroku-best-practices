@@ -3,6 +3,6 @@
 *.db
 .DS_Store
 .coverage
-mhbp_settings
+mhbp_settings_auth
 /static
 .env
